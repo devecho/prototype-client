@@ -1,7 +1,7 @@
 var app = angular.module('app', ['ui.bootstrap', 'ui.state']);
 
-app.config(function($stateProvider, $routeProvider){
-    $stateProvider
+app.config(function($stateProvider, $routeProvider) {
+	$stateProvider
     .state('settings', {
         url: '/settings',
         views: {
@@ -13,7 +13,7 @@ app.config(function($stateProvider, $routeProvider){
     .state('settings.contacts', {
         url: '/contacts',
         views: {
-            'main@area': {
+            'area': {
                 templateUrl: 'tpl/settings/contact-list.html'
             }
         }
