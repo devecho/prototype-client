@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    
+    <script src="lib/jquery.js" type="text/javascript"></script>
+    <script src="lib/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="lib/angular.js" type="text/javascript"></script>
+    <script src="lib/ng.angular-ui.js" type="text/javascript"></script>
+    <script src="lib/ng.bootstrap-ui/main.js" type="text/javascript"></script>
+    <script src="lib/ng.bootstrap-ui/templates.js" type="text/javascript"></script>
+    
+    <script src="js/routes.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div>
+        <a href="#rooms">Rooms</a>
+        <a href="#settings">Settings</a>
+    </div>
+    <div ui-view="main"></div>
+    <div ui-view="sidebar"></div>
+  </body>
+</html>
