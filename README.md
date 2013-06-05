@@ -1,4 +1,0 @@
-prototype
-=========
-
-angular.js prototype
