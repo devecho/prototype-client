@@ -9,6 +9,9 @@ requirejs.config({
 			// module value.
 			exports : 'angular'
 		},
+		'underscore' : {
+			exports : '_',
+		},
 		'jquery' : {
 			exports : 'jQuery'
 		},
@@ -21,29 +24,41 @@ requirejs.config({
 		'bootstrap-ui-templates' : {
 			deps : [ 'bootstrap-ui' ]
 		},
+		'ngResource' : {
+			deps : [ 'angularjs' ]
+		},
 		'angular-ui' : {
 			deps : [ 'angularjs' ]
+		},
+		'restangular' : {
+			exports : 'Restangular',
+			deps : [ 'angularjs', 'ngResource', 'underscore' ]
 		}
 	},
 	paths : {
 		'angularjs' : '../lib/angular',
+		'underscore' : '../lib/underscore',
 		'jquery' : '../lib/jquery',
 		'bootstrap' : '../lib/bootstrap/js/bootstrap',
 		'bootstrap-ui' : '../lib/bootstrap-ui/main',
 		'bootstrap-ui-templates' : '../lib/bootstrap-ui/templates',
-		'angular-ui' : '../lib/angular-ui'
+		'ngResource' : '../lib/ngResource',
+		'angular-ui' : '../lib/angular-ui',
+		'restangular' : '../lib/restangular'
 	}
 });
 
 requirejs([ 'controllers/controllers', 'services/services',
-		'directives/directives', 'filters/filters', 'angularjs', 'angular-ui',
-		'bootstrap', 'jquery', 'bootstrap-ui', 'bootstrap-ui-templates' ],
+		'directives/directives', 'filters/filters', 'resources/resources',
+		'angularjs', 'angular-ui', 'bootstrap', 'jquery', 'bootstrap-ui',
+		'bootstrap-ui-templates' ],
 
-function(ControllerModule, ServiceModule, DirectiveModule, FilterModule) {
+function(ControllerModule, ServiceModule, DirectiveModule, FilterModule,
+		ResourceModule) {
 
 	var appModule = angular.module('app', [ 'ui.bootstrap', 'ui.state',
-			ControllerModule.name, ServiceModule.name, DirectiveModule.name,
-			FilterModule.name, ]);
+			ResourceModule.name, ControllerModule.name, ServiceModule.name,
+			DirectiveModule.name, FilterModule.name, ]);
 
 	appModule.config(function($stateProvider, $routeProvider) {
 		$stateProvider.state('settings', {
