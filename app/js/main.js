@@ -75,14 +75,11 @@ function(ControllerModule, ServiceModule, DirectiveModule, FilterModule,
 					templateUrl : 'partials/settings/contact-list.html'
 				}
 			}
-		}).state('rooms', {
-			url : '/rooms',
+		}).state('dashboard', {
+			url : '/dashboard',
 			views : {
 				'main' : {
-					templateUrl : 'partials/rooms/list.html'
-				},
-				'sidebar' : {
-					templateUrl : 'partials/users/list.html'
+					templateUrl : 'partials/dashboard/layout.html'
 				}
 			}
 		});
