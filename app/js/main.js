@@ -33,6 +33,9 @@ requirejs.config({
 		'restangular' : {
 			exports : 'Restangular',
 			deps : [ 'angularjs', 'ngResource', 'underscore' ]
+		},
+		'gridster' : {
+			deps : [ 'jquery' ]
 		}
 	},
 	paths : {
@@ -44,7 +47,14 @@ requirejs.config({
 		'bootstrap-ui-templates' : '../lib/bootstrap-ui/templates',
 		'ngResource' : '../lib/ngResource',
 		'angular-ui' : '../lib/angular-ui',
-		'restangular' : '../lib/restangular'
+		'restangular' : '../lib/restangular',
+		'gridster': '../lib/gridster/gridster',
+		'css': '../lib/requirejs.css'
+	},
+	config: {
+		'css': {
+			activate: true
+		}
 	}
 });
 
@@ -65,12 +75,15 @@ function(ControllerModule, ServiceModule, DirectiveModule, FilterModule,
 			url : '/settings',
 			views : {
 				'main' : {
-					templateUrl : 'partials/settings/settings.html'
+					templateUrl : 'partials/main/layout.html'
 				}
 			}
 		}).state('settings.contacts', {
 			url : '/contacts',
 			views : {
+				'main' : {
+					templateUrl : 'partials/main/layout.html'
+				},
 				'area' : {
 					templateUrl : 'partials/settings/contact-list.html'
 				}
@@ -79,7 +92,7 @@ function(ControllerModule, ServiceModule, DirectiveModule, FilterModule,
 			url : '/dashboard',
 			views : {
 				'main' : {
-					templateUrl : 'partials/dashboard/layout.html'
+					templateUrl : 'partials/main/layout.html'
 				}
 			}
 		});

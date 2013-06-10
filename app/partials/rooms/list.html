@@ -1,16 +1,12 @@
 <div ng-controller="MainCtrl">
-    <div ng-controller="RoomListCtrl">
-        <accordion close-others="false">
-            <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-                <ul>
-                    <li ng-repeat="room in group.rooms">
-                        <a href="#/rooms/{{room.id}}">{{room.title}}</a>
-                        <span>{{room.curUsers}} of {{room.maxUsers}} users</span>
-                    </li>
-                </ul>
-                <br>
-                <a href="#" ng-click="$parent.refresh()">Refresh</a>
-            </accordion-group>
-        </accordion>
-    </div>
+	<div ng-controller="RoomListCtrl">
+		<ul>
+			<li ng-repeat="room in rooms">
+				<a href="#/rooms/{{room.id}}">{{room.title}}</a>
+				<span>{{room.curUsers}} of {{room.maxUsers}} users</span>
+			</li>
+		</ul>
+		<br>
+		<a href="#" ng-click="$parent.refresh()">Refresh</a>
+	</div>
 </div>

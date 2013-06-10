@@ -1,0 +1,12 @@
+<div ng-controller="AddWidgetCtrl">
+	<a ng-click="showWidgets = !showWidgets" ng-hide="showWidgets">Add</a>
+	
+	<div ng-show="showWidgets">
+	<ul>
+		<li>Single Room</li>
+		<li>Room summary</li>
+		<li>Contacts</li>
+	</ul>
+	<a ng-click="showWidgets = !showWidgets">Back</a>
+	</div>
+</div>

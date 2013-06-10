@@ -1,0 +1,9 @@
+<div ng-controller="MainCtrl">
+	<tabs>
+		<pane heading="Dashboard" ng-include src="'partials/dashboard/layout.html'"></pane>
+
+		<pane ng-repeat="room in rooms" heading="{{room.title}}" active="room.visible">
+			{{room.tabActive}}
+		</pane>
+	</tabs>
+</div>

@@ -1,15 +1,32 @@
 /* Controllers */
 
-define('controllers/controllers', [ 'angularjs', 'controllers/MainCtrl', 'controllers/RoomListCtrl', 'controllers/UserListCtrl' ],
-		function(angular, MainCtrl, RoomListCtrl, UserListCtrl) {
-			var controllerModule = angular.module('controllers', [],
-					function() {
+var controllers = {
+		'MainCtrl': 'MainCtrl',
+		'RoomListCtrl': 'RoomListCtrl',
+		'UserListCtrl': 'UserListCtrl',
+		'DashboardCtrl': 'dashboard/Dashboard',
+		'AddWidgetCtrl': 'dashboard/AddWidget',
+		'SingleRoomCtrl': 'dashboard/SingleRoom'
+}
 
-					});
+var controllerDeps = [];
 
-			controllerModule.controller('MainCtrl', MainCtrl);
-			controllerModule.controller('RoomListCtrl', RoomListCtrl);
-			controllerModule.controller('UserListCtrl', UserListCtrl);
+for(var i in controllers) {
+	controllerDeps.push('controllers/' + controllers[i]);
+}
 
-			return controllerModule;
-		});
+var otherDeps = ['angularjs'];
+
+define('controllers/controllers', otherDeps.concat(controllerDeps), function(angular) {
+	var controllerModule = angular.module('controllers', [], function() {
+
+	});
+	
+	var index = otherDeps.length;
+	for(var ctrlName in controllers) {
+		controllerModule.controller(ctrlName, arguments[index]);
+		index++;
+	}
+
+	return controllerModule;
+});
