@@ -1,9 +1,14 @@
 <div ng-controller="MainCtrl">
-	<tabs>
-		<pane heading="Dashboard" ng-include src="'partials/dashboard/layout.html'"></pane>
+	<tabset>
+		<tab heading="Dashboard" select="$parent.onTabSelected('dashboard')"
+		active="$parent.activeTabs['dashboard']">
+			<div ng-include src="'partials/dashboard/layout.html'"></div>
+		</tab>
 
-		<pane ng-repeat="room in rooms" heading="{{room.title}}" active="room.visible">
-			{{room.tabActive}}
-		</pane>
-	</tabs>
+		<tab ng-repeat="room in rooms" heading="{{room.title}}"
+		select="$parent.onTabSelected(this)"
+		active="$parent.activeTabs.rooms[$index]">
+			<div ng-include src="'partials/rooms/room.html'"></div>
+		</tab>
+	</tabset>
 </div>

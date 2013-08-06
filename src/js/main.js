@@ -48,12 +48,12 @@ requirejs.config({
 		'ngResource' : '../lib/ngResource',
 		'angular-ui' : '../lib/angular-ui',
 		'restangular' : '../lib/restangular',
-		'gridster': '../lib/gridster/gridster',
-		'css': '../lib/requirejs.css'
+		'gridster' : '../lib/gridster/gridster',
+		'css' : '../lib/requirejs.css'
 	},
-	config: {
-		'css': {
-			activate: true
+	config : {
+		'css' : {
+			activate : true
 		}
 	}
 });
@@ -70,7 +70,7 @@ function(ControllerModule, ServiceModule, DirectiveModule, FilterModule,
 			ResourceModule.name, ControllerModule.name, ServiceModule.name,
 			DirectiveModule.name, FilterModule.name, ]);
 
-	appModule.config(function($stateProvider, $routeProvider) {
+	appModule.config(function($stateProvider, $urlRouterProvider, $routeProvider) {
 		$stateProvider.state('settings', {
 			url : '/settings',
 			views : {
@@ -89,13 +89,30 @@ function(ControllerModule, ServiceModule, DirectiveModule, FilterModule,
 				}
 			}
 		}).state('dashboard', {
+			controller : function($scope) {
+				$scope;
+			},
 			url : '/dashboard',
 			views : {
 				'main' : {
 					templateUrl : 'partials/main/layout.html'
 				}
 			}
+		}).state('room', {
+			controller : function($scope) {
+				$scope;
+			},
+			url : '/room/:id',
+			views : {
+				'main' : {
+					templateUrl : 'partials/main/layout.html'
+				}
+			}
 		});
+		$urlRouterProvider.when('', '/dashboard');
+		$urlRouterProvider.when('/', '/dashboard');
+	}).run(function($rootScope, $location) {
+	    $rootScope.location = $location;
 	});
 
 	angular.bootstrap(document, [ 'app' ]);
