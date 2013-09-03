@@ -1,0 +1,108 @@
+@import "variables";
+@import "mixins";
+
+ul.dashboard {
+  height: 100%;
+  margin: 0;
+  padding: @paddingNormal;
+  list-style: none;
+
+  > li {
+	display: block;
+	height: 50%;
+	float: left;
+	padding: @paddingNormal;
+	font-size: 0.8em;
+	width: 33%;
+	.transition(width);
+
+	@media (max-width: 1279px) {
+	  width: 50%;
+	}
+
+	> section {
+	  height: 100%;
+	  border: 1pt solid @greyLight;
+
+	  > header {
+		color: #FFF;
+		padding: @paddingNormal;
+	  }
+
+	  &.conversations {
+
+		> header {
+		  background: @metroBlue;
+		}
+
+		ul li {
+		  line-height: 3em;
+
+		  > span {
+			padding: 0 @paddingSmall;
+			.singleLine();
+
+			&.name {
+			  font-weight: bold;
+			  width: 25%;
+			}
+
+			&.message {
+			  color: @fontColorLight;
+			}
+
+			&.unread {
+			  width: 15%;
+			  text-align: right;
+			  color: @fontColorLight;
+			  font-weight: bold;
+			}
+		  }
+		}
+	  }
+
+	  &.contacts {
+
+		> header {
+		  background: @metroGreen;
+		}
+	  }
+
+	  &.invitations {
+
+		> header {
+		  background: @metroPink;
+		}
+
+		ul li {
+		  position: relative;
+		  border-bottom: 1pt solid @greyLightest;
+		  padding: @paddingSmall;
+
+		  > .avatar {
+			font-size: 40pt;
+			float: left;
+		  }
+
+		  > .message {
+			display: inline-block;
+			overflow: hidden;
+			margin-right: 20pt;
+		  }
+
+		  > .btnBar {
+			margin: @paddingSmall 0;
+		  }
+
+		  > i.icon-close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: @iconSmall;
+			padding: @paddingNormal;
+		  }
+		}
+	  }
+	}
+  }
+}

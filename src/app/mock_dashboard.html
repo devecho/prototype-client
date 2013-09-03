@@ -4,13 +4,179 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Dashboard (MOCK) - POC</title>
 
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="lib/require.js" data-main="main.js"></script>
 
 </head>
 <body>
-    <div id="navigation">
-        <div class="avatar"></div>
+
+<div id="navigation">
+    <div class="currentUser">
+        <div class="avatar online"><i class="icon-user"></i></div>
+        <h2 class="username">Max Mustermann</h2>
     </div>
+
+    <ul class="no-style">
+        <li class="home active">
+            <a href="#home">
+                <i class="icon-home"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li class="settings">
+            <a href="#settings">
+                <i class="icon-cog"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+
+        <li class="split"></li>
+
+        <li class="room">
+            <a href="#room/1">
+                <i class="icon-menu"></i>
+                <span>Room 1</span>
+            </a>
+        </li>
+        <li class="room">
+            <a href="#room/2">
+                <i class="icon-menu"></i>
+                <span>Room 2</span>
+            </a>
+        </li>
+        <li class="room">
+            <a href="#room/3">
+                <i class="icon-menu"></i>
+                <span>Room 3</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div id="main">
+    <ul class="dashboard">
+        <li>
+            <section class="conversations">
+                <header>
+                    <h1>Recent Conversations</h1>
+                </header>
+                <div class="content">
+                    <ul class="clickable grid">
+                        <li>
+                            <span class="name">Room 1</span>
+                            <span class="message">How about 5AM?</span>
+                            <span class="unread">+2</span>
+                        </li>
+                        <li>
+                            <span class="name">John</span>
+                            <span class="message">Lorem ipsum, solor sit amet</span>
+                            <span class="unread">+1</span>
+                        </li>
+                        <li>
+                            <span class="name">This, that & Co.</span>
+                            <span class="message">Watch that: http://youtube.com/?watch=abcdefg123</span>
+                            <span class="unread">+1</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </li>
+
+        <li>
+            <section class="contacts">
+                <header>
+                    <h1>Contacts</h1>
+                </header>
+                <div class="content">
+                    <ul class="users">
+                        <li>
+                            <div class="avatarContainer">
+                                <div class="avatar online"><i class="icon-user"></i></div>
+                            </div>
+                            <div class="username">John English</div>
+                        </li>
+                        <li>
+                            <div class="avatarContainer">
+                                <div class="avatar online"><i class="icon-user"></i></div>
+                            </div>
+                            <div class="username">Nele Elen</div>
+                        </li>
+
+                        <li>
+                            <div class="avatarContainer">
+                                <div class="avatar idle"><i class="icon-user"></i></div>
+                            </div>
+                            <div class="username">Mr. Busy</div>
+                        </li>
+
+                        <li>
+                            <div class="avatarContainer">
+                                <div class="avatar abscent"><i class="icon-user"></i></div>
+                            </div>
+                            <div class="username">Hugo Hummels</div>
+                        </li>
+
+                        <li>
+                            <div class="avatarContainer">
+                                <div class="avatar offline"><i class="icon-user"></i></div>
+                            </div>
+                            <div class="username">Hugo Hummels</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </li>
+
+        <li>
+            <section class="invitations">
+                <header>
+                    <h1>Invitations</h1>
+                </header>
+                <div class="content">
+                    <ul class="no-style">
+                        <li class="contactInvitation">
+                            <div class="avatar"><i class="icon-user"></i></div>
+                            <span class="message">
+                                <a class="username">Zoe Zalando</a> wants to add you.
+                            </span>
+                            <i class="icon-close clickable"></i>
+                            <br>
+
+                            <div class="btnBar">
+                                <a class="btn">Decline</a>
+                                <a class="btn positive">Accept</a>
+                            </div>
+                        </li>
+
+                        <li class="contactInvitation">
+                            <div class="avatar"><i class="icon-user"></i></div>
+                            <span class="message">
+                                <a class="username">Mike Dillinger</a> wants to add you.
+                            </span>
+                            <i class="icon-close clickable"></i>
+                            <br>
+
+                            <div class="btnBar">
+                                <a class="btn">Decline</a>
+                                <a class="btn positive">Accept</a>
+                            </div>
+                        </li>
+
+                        <li class="roomInvitation">
+                            <span class="message">
+                                <a class="username">John English</a>
+                                invited you to the room
+                                <a class="room">devecho</a>.
+                            </span>
+                            <i class="icon-close clickable"></i>
+                            <br>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </li>
+    </ul>
+</div>
+
 </body>
 </html>

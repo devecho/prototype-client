@@ -1,0 +1,7 @@
+.idea/*
+.settings/*
+node_modules/*
+./out/*
+./out/*
+out/*
+.project

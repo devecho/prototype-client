@@ -1,0 +1,87 @@
+@import "variables";
+@import "mixins";
+
+@navigationWidth: 200pt;
+
+#navigation {
+  float: left;
+  height: 100%;
+  width: @navigationWidth;
+  background: #003344;
+  font-size: 0.8em;
+
+  h1, h2, h3, h4, h5 {
+    color: #FFF;
+  }
+
+  .currentUser {
+    padding: @paddingNormal;
+
+	.avatar {
+	  float: left;
+	}
+
+	.username {
+	  margin-top: @paddingSmall;
+	  font-weight: bold;
+	}
+  }
+
+  ul {
+    font-size: 1.2em;
+    clear: both;
+    padding-top: @paddingBig;
+
+    section {
+      margin-top: @paddingBig;
+    }
+
+    li {
+      margin-top: @paddingNormal;
+      .transition(background);
+
+      &.split {
+        height: @paddingBig;
+      }
+
+      &.home {
+        &:hover, &:focus, &.active {
+          background: #C00;
+        }
+      }
+
+      &.settings {
+        &:hover, &:focus, &.active {
+          background: #090;
+        }
+      }
+
+      &.room {
+        &:hover, &:focus, &.active {
+          background: #09F;
+        }
+      }
+
+      a {
+        display: inline-block;
+        width: 100%;
+        padding: @paddingNormal 0;
+        color: #FFF;
+
+        i {
+          color: #FFF;
+          font-size: 1.8em;
+          line-height: 1em;
+          float: left;
+          margin-left: @paddingNormal;
+        }
+
+        span {
+          font-size: 1em;
+          line-height: 1.8em;
+          margin-left: @paddingNormal;
+        }
+      }
+    }
+  }
+}

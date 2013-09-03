@@ -30,12 +30,20 @@ module.exports = function(grunt) {
 					'<%= out %>dev/css/style.css': '<%= out %>dev/less/main.less'
 				}
 			}
+		},
+
+		watch: {
+			main: {
+				files: 'src/app/**',
+				tasks: ['dev']
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('dev', [ 'clean:out', 'copy:dev', 'less:dev', 'clean:less' ]);
 
