@@ -1,0 +1,908 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+a {
+  color: inherit;
+}
+p:first-child {
+  margin-top: 0;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+/* Page settings */
+/* Media thresholds */
+body,
+textarea {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+h1 {
+  font-size: 1.3em;
+}
+h2 {
+  font-size: 1.2em;
+}
+h3 {
+  font-size: 1.15em;
+}
+h4 {
+  font-size: 1.1em;
+}
+h5 {
+  font-size: 1.05em;
+}
+/* Links/Buttons */
+a {
+  text-decoration: none;
+  color: #0099ff;
+  cursor: pointer;
+}
+a:hover,
+a:focus {
+  color: #66c2ff;
+}
+a.btn {
+  display: inline-block;
+  padding: 0 10pt;
+  background: #999999;
+  color: #FFF;
+  font-size: 10pt;
+  line-height: 20pt;
+  height: 20pt;
+  width: auto;
+}
+a.btn:hover,
+a.btn:focus {
+  background: #b3b3b3;
+}
+a.btn:active {
+  background: #808080;
+}
+a.btn.positive {
+  background: #0099ff;
+}
+a.btn.positive:hover,
+a.btn.positive:focus {
+  background: #33adff;
+}
+a.btn.positive:active {
+  background: #007acc;
+}
+div.btnBar {
+  display: inline-block;
+  font-size: 0.5em;
+  line-height: 1em;
+  height: 1em;
+  width: auto;
+  font-size: 20pt;
+}
+div.btnBar > a.btn {
+  vertical-align: top;
+  margin-left: 5pt;
+}
+div.btnBar > a.btn:first-child {
+  margin-left: 0;
+}
+/* Utilities */
+div.clr,
+br.clr {
+  clear: both;
+}
+.noResize {
+  resize: none;
+  -moz-resize: none;
+  -webkit-resize: none;
+  -ms-resize: none;
+}
+ul.no-style {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.clickable {
+  list-style: none;
+  padding: 0;
+}
+ul.clickable > li {
+  border-bottom: 1pt solid #eeeeee;
+  cursor: pointer;
+}
+ul.clickable > li:hover {
+  background: #eeeeee;
+  -webkit-transition: background ease-in-out 100ms;
+  -moz-transition: background ease-in-out 100ms;
+  -ms-transition: background ease-in-out 100ms;
+  -o-transition: background ease-in-out 100ms;
+}
+ul.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+ul.grid li {
+  display: table-row;
+}
+ul.grid li > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+ul.horizontal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.horizontal > li {
+  float: left;
+}
+@font-face {
+  font-family: 'icomoon';
+  src: url('../font/icomoon.eot');
+  src: url('../font/icomoon.eot?#iefix') format('embedded-opentype'), url('../font/icomoon.woff') format('woff'), url('../font/icomoon.ttf') format('truetype'), url('../font/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-home,
+.icon-menu,
+.icon-cog,
+.icon-bubble,
+.icon-lock,
+.icon-checkmark,
+.icon-close,
+.icon-download,
+.icon-attachment,
+.icon-smiley,
+.icon-tongue,
+.icon-wink,
+.icon-grin,
+.icon-angry,
+.icon-shocked,
+.icon-wondering,
+.icon-confused,
+.icon-neutral,
+.icon-evil,
+.icon-sad,
+.icon-happy,
+.icon-spinner,
+.icon-switch,
+.icon-plus,
+.icon-comment,
+.icon-arrow-left,
+.icon-untitled,
+.icon-arrow-down,
+.icon-arrow-up,
+.icon-locked,
+.icon-unlocked,
+.icon-paperclip,
+.icon-export,
+.icon-forward,
+.icon-untitled-2,
+.icon-cross,
+.icon-redo,
+.icon-spinner-2,
+.icon-users,
+.icon-user,
+.icon-cancel-circle,
+.icon-checkmark-circle,
+.icon-search,
+.icon-plus-2,
+.icon-pen,
+.icon-filter {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-home:before {
+  content: "\e000";
+}
+.icon-menu:before {
+  content: "\e002";
+}
+.icon-cog:before {
+  content: "\e003";
+}
+.icon-bubble:before {
+  content: "\e004";
+}
+.icon-lock:before {
+  content: "\e005";
+}
+.icon-checkmark:before {
+  content: "\e007";
+}
+.icon-close:before {
+  content: "\e008";
+}
+.icon-download:before {
+  content: "\e006";
+}
+.icon-attachment:before {
+  content: "\e00a";
+}
+.icon-smiley:before {
+  content: "\e00c";
+}
+.icon-tongue:before {
+  content: "\e00d";
+}
+.icon-wink:before {
+  content: "\e00e";
+}
+.icon-grin:before {
+  content: "\e00f";
+}
+.icon-angry:before {
+  content: "\e00b";
+}
+.icon-shocked:before {
+  content: "\e010";
+}
+.icon-wondering:before {
+  content: "\e011";
+}
+.icon-confused:before {
+  content: "\e012";
+}
+.icon-neutral:before {
+  content: "\e013";
+}
+.icon-evil:before {
+  content: "\e014";
+}
+.icon-sad:before {
+  content: "\e015";
+}
+.icon-happy:before {
+  content: "\e016";
+}
+.icon-spinner:before {
+  content: "\e017";
+}
+.icon-switch:before {
+  content: "\e018";
+}
+.icon-plus:before {
+  content: "\e009";
+}
+.icon-comment:before {
+  content: "\e019";
+}
+.icon-arrow-left:before {
+  content: "\e01a";
+}
+.icon-untitled:before {
+  content: "\e01b";
+}
+.icon-arrow-down:before {
+  content: "\e01c";
+}
+.icon-arrow-up:before {
+  content: "\e01d";
+}
+.icon-locked:before {
+  content: "\e020";
+}
+.icon-unlocked:before {
+  content: "\e021";
+}
+.icon-paperclip:before {
+  content: "\e022";
+}
+.icon-export:before {
+  content: "\e023";
+}
+.icon-forward:before {
+  content: "\e024";
+}
+.icon-untitled-2:before {
+  content: "\e025";
+}
+.icon-cross:before {
+  content: "\e026";
+}
+.icon-redo:before {
+  content: "\e027";
+}
+.icon-spinner-2:before {
+  content: "\e028";
+}
+.icon-users:before {
+  content: "\e029";
+}
+.icon-user:before {
+  content: "\e02a";
+}
+.icon-cancel-circle:before {
+  content: "\e001";
+}
+.icon-checkmark-circle:before {
+  content: "\e02b";
+}
+.icon-search:before {
+  content: "\e02c";
+}
+.icon-plus-2:before {
+  content: "\e01e";
+}
+.icon-pen:before {
+  content: "\e01f";
+}
+.icon-filter:before {
+  content: "\e02d";
+}
+i.clickable {
+  cursor: pointer;
+  color: #cccccc;
+  padding: 0.5em;
+}
+i.clickable:hover,
+i.clickable:focus {
+  color: #999999;
+}
+div.avatar {
+  font-size: 40pt;
+  height: 1em;
+}
+div.avatar.online {
+  border-left: 0.1em solid #00cc00;
+}
+div.avatar.abscent {
+  border-left: 0.1em solid #ff9900;
+}
+div.avatar.idle {
+  border-left: 0.1em solid #cc0000;
+}
+div.avatar.offline {
+  border-left: 0.1em solid #eeeeee;
+}
+div.avatar i.icon-user {
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+  color: #003344;
+  width: 100%;
+  height: 100%;
+}
+ul.users {
+  margin: 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+ul.users li {
+  display: table-row;
+}
+ul.users li > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+ul.users > li {
+  border-bottom: 1pt solid #eeeeee;
+  cursor: pointer;
+}
+ul.users > li:hover {
+  background: #eeeeee;
+  -webkit-transition: background ease-in-out 100ms;
+  -moz-transition: background ease-in-out 100ms;
+  -ms-transition: background ease-in-out 100ms;
+  -o-transition: background ease-in-out 100ms;
+}
+ul.users > li {
+  line-height: 3em;
+}
+ul.users > li > div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ul.users > li > div.avatarContainer {
+  width: 40pt;
+}
+ul.users > li > div.avatarContainer > .avatar {
+  font-size: 40pt;
+}
+textarea {
+  margin: 0;
+  padding: 5pt;
+  border: 1pt solid #999999;
+  outline: none;
+}
+#navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40pt;
+  font-size: 40pt;
+  background: #003344;
+  -webkit-transition: left ease-in-out 500ms;
+  -moz-transition: left ease-in-out 500ms;
+  -ms-transition: left ease-in-out 500ms;
+  -o-transition: left ease-in-out 500ms;
+}
+#navigation h1,
+#navigation h2,
+#navigation h3,
+#navigation h4,
+#navigation h5 {
+  color: #FFF;
+}
+#navigation ul {
+  margin-left: 200pt;
+  font-size: 1.2em;
+}
+#navigation ul li {
+  height: 40pt;
+  padding: 0 5pt;
+  margin: 0 5pt;
+  -webkit-transition: background ease-in-out 100ms;
+  -moz-transition: background ease-in-out 100ms;
+  -ms-transition: background ease-in-out 100ms;
+  -o-transition: background ease-in-out 100ms;
+}
+#navigation ul li.home:hover,
+#navigation ul li.home:focus,
+#navigation ul li.home.active {
+  background: #cc0000;
+}
+#navigation ul li.settings:hover,
+#navigation ul li.settings:focus,
+#navigation ul li.settings.active {
+  background: #00cc00;
+}
+#navigation ul li.contacts:hover,
+#navigation ul li.contacts:focus,
+#navigation ul li.contacts.active {
+  background: #ff9900;
+}
+#navigation ul li.rooms:hover,
+#navigation ul li.rooms:focus,
+#navigation ul li.rooms.active {
+  background: #0099ff;
+}
+#navigation ul li.currentUser {
+  float: right;
+  margin-right: 20pt;
+}
+#navigation ul li.currentUser:hover,
+#navigation ul li.currentUser:focus,
+#navigation ul li.currentUser.active {
+  background: #ff9900;
+}
+#navigation ul li.currentUser a {
+  width: auto;
+}
+#navigation ul li.currentUser i.icon-user {
+  padding: 0;
+  color: #FFF;
+  float: left;
+  font-size: 28pt;
+  line-height: 40pt;
+}
+#navigation ul li.currentUser .username {
+  float: right;
+  margin-left: 10pt;
+  width: auto;
+  font-size: 0.3em;
+  line-height: 40pt;
+  color: #FFF;
+}
+#navigation ul li a {
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+  width: 40pt;
+  font-size: 40pt;
+  line-height: 30pt;
+  text-align: center;
+}
+#navigation ul li a i {
+  vertical-align: top;
+  padding: 10pt 0;
+  font-size: 20pt;
+  color: #FFF;
+}
+#contextBar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50pt;
+  background: #003344;
+}
+#contextBar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#contextBar ul li {
+  float: left;
+  height: 50pt;
+  margin: 0 5pt;
+}
+#contextBar ul li a {
+  padding: 0 10pt;
+  color: #FFF;
+  display: inline-block;
+  line-height: 50pt;
+  width: 100%;
+  height: 100%;
+}
+#contextBar ul li a:hover,
+#contextBar ul li a:focus {
+  background: #FFF;
+  color: #003344;
+}
+#contextBar ul li a span {
+  margin-left: 5pt;
+}
+ul.dashboard {
+  height: 100%;
+  margin: 0;
+  padding: 10pt;
+  list-style: none;
+}
+ul.dashboard > li {
+  display: block;
+  height: 50%;
+  float: left;
+  padding: 10pt;
+  font-size: 0.8em;
+  width: 33%;
+  -webkit-transition: width ease-in-out 100ms;
+  -moz-transition: width ease-in-out 100ms;
+  -ms-transition: width ease-in-out 100ms;
+  -o-transition: width ease-in-out 100ms;
+}
+@media (max-width: 1279px) {
+  ul.dashboard > li {
+    width: 50%;
+  }
+}
+ul.dashboard > li > section {
+  height: 100%;
+  border: 1pt solid #cccccc;
+}
+ul.dashboard > li > section > header {
+  color: #FFF;
+  padding: 10pt;
+}
+ul.dashboard > li > section.conversations > header {
+  background: #0099ff;
+}
+ul.dashboard > li > section.conversations ul li {
+  line-height: 3em;
+}
+ul.dashboard > li > section.conversations ul li > span {
+  padding: 0 5pt;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ul.dashboard > li > section.conversations ul li > span.name {
+  font-weight: bold;
+  width: 25%;
+}
+ul.dashboard > li > section.conversations ul li > span.message {
+  color: #999999;
+}
+ul.dashboard > li > section.conversations ul li > span.unread {
+  width: 15%;
+  text-align: right;
+  color: #999999;
+  font-weight: bold;
+}
+ul.dashboard > li > section.contacts > header {
+  background: #00cc00;
+}
+ul.dashboard > li > section.invitations > header {
+  background: #ff0099;
+}
+ul.dashboard > li > section.invitations ul li {
+  position: relative;
+  border-bottom: 1pt solid #eeeeee;
+  padding: 5pt;
+}
+ul.dashboard > li > section.invitations ul li > .avatar {
+  font-size: 40pt;
+  float: left;
+}
+ul.dashboard > li > section.invitations ul li > .message {
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 20pt;
+}
+ul.dashboard > li > section.invitations ul li > .btnBar {
+  margin: 5pt 0;
+}
+ul.dashboard > li > section.invitations ul li > i.icon-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 8pt;
+  padding: 10pt;
+}
+#roomNavigation {
+  position: fixed;
+  top: 40pt;
+  bottom: 50pt;
+  left: 0;
+  width: 0;
+  overflow: hidden;
+  background: #FFF;
+  border-right: 1pt solid #cccccc;
+  -webkit-transition: width ease-in-out 500ms;
+  -moz-transition: width ease-in-out 500ms;
+  -ms-transition: width ease-in-out 500ms;
+  -o-transition: width ease-in-out 500ms;
+}
+@media (min-width: 768px) {
+  #roomNavigation {
+    width: 200pt;
+  }
+}
+#roomNavigation > ul {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#roomNavigation > ul > li > a {
+  width: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 0 10pt;
+  line-height: 30pt;
+  color: #000000;
+  -webkit-transition: background ease-in-out 100ms, color ease-in-out 100ms;
+  -moz-transition: background ease-in-out 100ms, color ease-in-out 100ms;
+  -ms-transition: background ease-in-out 100ms, color ease-in-out 100ms;
+  -o-transition: background ease-in-out 100ms, color ease-in-out 100ms;
+  transition: background ease-in-out 100ms, color ease-in-out 100ms;
+}
+#roomNavigation > ul > li > a:hover,
+#roomNavigation > ul > li > a:focus,
+#roomNavigation > ul > li > a.active {
+  background: #0099ff;
+  color: #FFF;
+}
+div.room {
+  position: relative;
+  height: 100%;
+  margin: 0;
+}
+div.room > .chat {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition: right ease-in-out 500ms;
+  -moz-transition: right ease-in-out 500ms;
+  -ms-transition: right ease-in-out 500ms;
+  -o-transition: right ease-in-out 500ms;
+}
+@media (min-width: 1280px) {
+  div.room > .chat {
+    right: 250pt;
+  }
+}
+div.room > .chat > .messages {
+  display: block;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: 20pt;
+  bottom: 100pt;
+  left: 20pt;
+  right: 0;
+  list-style: none;
+  font-size: 10pt;
+}
+div.room > .chat > .messages > ul {
+  margin: 0;
+  padding: 0 20pt 0 0;
+}
+div.room > .chat > .messages > ul > li > * {
+  vertical-align: top;
+  padding: 10pt 0;
+  border-bottom: 1pt solid #cccccc;
+}
+div.room > .chat > .messages > ul > li > .username {
+  width: 125pt;
+  padding-left: 10pt;
+  padding-right: 10pt;
+  text-align: right;
+  font-weight: bold;
+}
+div.room > .chat > .messages > ul > li > .username > a {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div.room > .chat > .messages > ul > li > .username.own > a {
+  color: #999999;
+}
+div.room > .chat > .messages > ul > li > .content > .files {
+  display: table-row;
+}
+div.room > .chat > .messages > ul > li > .content > .files > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+div.room > .chat > .messages > ul > li > .content > .files > .image {
+  border: 2pt solid #FFF;
+  outline: 1pt solid #cccccc;
+  -webkit-transition: outline ease-in-out 100ms;
+  -moz-transition: outline ease-in-out 100ms;
+  -ms-transition: outline ease-in-out 100ms;
+  -o-transition: outline ease-in-out 100ms;
+  width: 80pt;
+  height: 60pt;
+  overflow: hidden;
+  cursor: pointer;
+}
+div.room > .chat > .messages > ul > li > .content > .files > .image:hover,
+div.room > .chat > .messages > ul > li > .content > .files > .image:focus {
+  outline-color: #0099ff;
+}
+div.room > .chat > .messages > ul > li > .content > .files > .image > img {
+  height: 100%;
+}
+div.room > .chat > .messages > ul > li > .content > .files > div > a {
+  padding-left: 10pt;
+  font-size: 1.2em;
+}
+div.room > .chat > .newMessage {
+  height: 60pt;
+  position: absolute;
+  bottom: 40pt;
+  left: 0;
+  right: 0;
+  padding: 20pt;
+  border-top: 1pt solid #CCC;
+}
+div.room > .chat > .newMessage .textarea {
+  margin-right: 60pt;
+}
+div.room > .chat > .newMessage .textarea textarea {
+  height: 60pt;
+  width: 100%;
+}
+div.room > .chat > .newMessage .send {
+  float: right;
+  width: 60pt;
+  height: 60pt;
+}
+div.room > .chat > .newMessage .send a.btn {
+  width: 100%;
+  height: 100%;
+  line-height: 60pt;
+  text-align: center;
+}
+div.room > .users {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  padding: 20pt 10pt;
+  -webkit-transition: width ease-in-out 500ms;
+  -moz-transition: width ease-in-out 500ms;
+  -ms-transition: width ease-in-out 500ms;
+  -o-transition: width ease-in-out 500ms;
+}
+@media (min-width: 1280px) {
+  div.room > .users {
+    width: 250pt;
+  }
+}
+div.room > .users section {
+  height: 100%;
+  border: 1pt solid #cccccc;
+  border-top: none;
+}
+div.room > .users section h1 {
+  padding: 5pt 10pt;
+  background: #ff9900;
+  color: #FFF;
+}
+div.room > .users section ul {
+  margin: 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+div.room > .users section ul li {
+  display: table-row;
+}
+div.room > .users section ul li > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+div.room > .users section ul > li {
+  border-bottom: 1pt solid #eeeeee;
+  cursor: pointer;
+}
+div.room > .users section ul > li:hover {
+  background: #eeeeee;
+  -webkit-transition: background ease-in-out 100ms;
+  -moz-transition: background ease-in-out 100ms;
+  -ms-transition: background ease-in-out 100ms;
+  -o-transition: background ease-in-out 100ms;
+}
+div.room > .users section ul .avatar {
+  width: 40pt;
+  font-size: 30pt;
+}
+div.room > .users section ul .username {
+  padding-left: 5pt;
+}
+#main {
+  position: fixed;
+  top: 40pt;
+  bottom: 50pt;
+  left: 0;
+  right: 0;
+  -webkit-transition: left ease-in-out 500ms;
+  -moz-transition: left ease-in-out 500ms;
+  -ms-transition: left ease-in-out 500ms;
+  -o-transition: left ease-in-out 500ms;
+}
+@media (min-width: 768px) {
+  #main {
+    left: 200pt;
+  }
+}
