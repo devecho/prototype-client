@@ -88,7 +88,7 @@ div.btnBar {
 
 /* Utilities */
 
-br.clr {
+div.clr, br.clr {
   clear: both;
 }
 
@@ -108,4 +108,12 @@ ul {
 
 ul.grid {
   .gridList();
+}
+
+ul.horizontal {
+  .noListStyle();
+
+  > li {
+	float: left;
+  }
 }

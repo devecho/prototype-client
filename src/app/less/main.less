@@ -6,10 +6,21 @@
 @import "common";
 @import "forms";
 @import "navigation";
+@import "contextbar";
 @import "dashboard";
 @import "room";
 
 #main {
-  height: 100%;
-  margin-left: @navigationWidth;
+	position: fixed;
+	top: @pageHeaderHeight;
+	bottom: @contextBarHeight;
+	left: 0;
+	right: 0;
+	.transition(left, @transitionSpeedSlow);
+}
+
+@media (min-width: @mediaSmallWidth) {
+	#main {
+		left: @roomNavigationWidth;
+	}
 }

@@ -1,0 +1,37 @@
+@import "variables";
+@import "mixins";
+
+#contextBar {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: @contextBarHeight;
+	background: @metroDarkBlue;
+
+	ul {
+		.noListStyle();
+
+		li {
+			float: left;
+			height: @contextBarHeight;
+			margin: 0 @paddingSmall;
+
+			a {
+				padding: 0 @paddingNormal;
+				color: #FFF;
+				display: inline-block;
+				line-height: @contextBarHeight;
+				.fill();
+
+				&:hover, &:focus {
+					background: #FFF;
+					color: @metroDarkBlue;
+				}
+
+				span {
+					margin-left: @paddingSmall;
+				}
+			}
+		}
+	}
+}

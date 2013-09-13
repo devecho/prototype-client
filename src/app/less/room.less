@@ -1,164 +1,206 @@
 @import "variables";
 @import "mixins";
 
-div.room {
-  @sidebarMinWidth: 280px;
-  /* @sidebarMinWidth: 1280px; */
-  @sidebarWidth: 200pt;
-  @newMessageHeight: 60pt;
-  height: 100%;
-  margin: 0;
+#roomNavigation {
+	position: fixed;
+	top: @pageHeaderHeight;
+	bottom: @contextBarHeight;
+	left: 0;
+	width: 0;
+	overflow: hidden;
+	background: #FFF;
+	border-right: 1pt solid @greyLight;
+	.transition(width, @transitionSpeedSlow);
 
-  > .chat {
-	position: relative;
-	height: 100%;
-	width: 100%;
-
-	.transition(padding, @transitionSpeedSlow);
-	@media (min-width: @sidebarMinWidth) {
-	  padding-right: @sidebarWidth;
+	@media (min-width: @mediaSmallWidth) {
+		width: @roomNavigationWidth;
 	}
 
-	> .messages {
-	  display: block;
-	  overflow-y: scroll;
-	  overflow-x: hidden;
-	  position: absolute;
-	  top: @paddingBig;
-	  bottom: @newMessageHeight + @paddingBig + @paddingBig;
-	  left: 0;
-	  right: 0;
-	  list-style: none;
-	  font-size: @fontSizeText;
-
-	  .transition(right, @transitionSpeedSlow);
-	  @media (min-width: @sidebarMinWidth) {
-		right: @sidebarWidth;
-	  }
-
-	  > ul {
-		margin: 0;
-		padding: 0;
+	> ul {
+		display: block;
+		.fill();
 
 		> li {
 
-		  > * {
-			vertical-align: top;
-			padding: @paddingNormal 0;
-			border-bottom: 1pt solid @greyLight;
-		  }
-
-		  > .username {
-			width: 125pt;
-			padding-left: @paddingNormal;
-			padding-right: @paddingNormal;
-			text-align: right;
-			font-weight: bold;
-
 			> a {
-			  display: inline-block;
-			  width: 100%;
-			  .singleLine();
-			}
+				width: 100%;
+				display: inline-block;
+				vertical-align: bottom;
+				padding: 0 @paddingNormal;
+				line-height: 30pt;
+				color: @fontColor;
+				.transitionAll(~'background ease-in-out @{transitionSpeed}, color ease-in-out @{transitionSpeed}');
 
-			&.own > a {
-			  color: @fontColorLight;
-			}
-		  }
-
-		  > .content {
-			> .files {
-			  display: table-row;
-
-			  > * {
-				display: table-cell;
-				vertical-align: middle;
-			  }
-
-			  > .image {
-				border: 2pt solid #FFF;
-				outline: 1pt solid @greyLight;
-				.transition(outline);
-				width: 80pt;
-				height: @newMessageHeight;
-				overflow: hidden;
-				cursor: pointer;
-
-				&:hover, &:focus {
-				  outline-color: @linkColor;
+				&:hover, &:focus, &.active {
+					background: @metroBlue;
+					color: #FFF;
 				}
-
-				> img {
-				  height: 100%;
-				}
-			  }
-
-			  > div > a {
-				padding-left: @paddingNormal;
-				font-size: 1.2em;
-			  }
 			}
-		  }
 		}
-	  }
 	}
+}
 
-	> .newMessage {
-	  @newMessagePadding: @paddingBig;
-
-	  height: @newMessageHeight;
-	  position: absolute;
-	  bottom: @paddingBig + @newMessagePadding;
-	  left: 0;
-	  right: 0;
-	  padding: @newMessagePadding;
-	  border-top: 1pt solid #CCC;
-
-	  .transition(right, @transitionSpeedSlow);
-	  @media (min-width: @sidebarMinWidth) {
-		right: @sidebarWidth;
-	  }
-
-	  .textarea {
-		margin-right: @newMessageHeight;
-
-		textarea {
-		  height: @newMessageHeight;
-		  width: 100%;
-		}
-	  }
-
-	  .send {
-		float: right;
-		width: @newMessageHeight;
-		height: @newMessageHeight;
-
-		a.btn {
-		  .fill();
-		  line-height: @newMessageHeight;
-		  text-align: center;
-		}
-	  }
-	}
-  }
-
-  > .users {
-	float: right;
-	width: @sidebarWidth;
+div.room {
+	position: relative;
+	@sidebarMinWidth: 1280px;
+	@sidebarWidth: 250pt;
+	@newMessageHeight: 60pt;
 	height: 100%;
-	padding: @paddingBig @paddingNormal;
-	position: absolute;
-	right: 0;
-	top: 0;
+	margin: 0;
 
-	.transition(width, @transitionSpeedSlow);
-	@media (min-width: @sidebarMinWidth) {
-	  width: @sidebarWidth;
+	> .chat {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		.transition(right, @transitionSpeedSlow);
+		@media (min-width: @sidebarMinWidth) {
+			right: @sidebarWidth;
+		}
+
+		> .messages {
+			display: block;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			position: absolute;
+			top: @paddingBig;
+			bottom: @newMessageHeight + @paddingBig + @paddingBig;
+			left: @paddingBig;
+			right: 0;
+			list-style: none;
+			font-size: @fontSizeText;
+
+			> ul {
+				margin: 0;
+				padding: 0 @paddingBig 0 0;
+
+				> li {
+
+					> * {
+						vertical-align: top;
+						padding: @paddingNormal 0;
+						border-bottom: 1pt solid @greyLight;
+					}
+
+					> .username {
+						width: 125pt;
+						padding-left: @paddingNormal;
+						padding-right: @paddingNormal;
+						text-align: right;
+						font-weight: bold;
+
+						> a {
+							display: inline-block;
+							width: 100%;
+							.singleLine();
+						}
+
+						&.own > a {
+							color: @fontColorLight;
+						}
+					}
+
+					> .content {
+						> .files {
+							display: table-row;
+
+							> * {
+								display: table-cell;
+								vertical-align: middle;
+							}
+
+							> .image {
+								border: 2pt solid #FFF;
+								outline: 1pt solid @greyLight;
+								.transition(outline);
+								width: 80pt;
+								height: @newMessageHeight;
+								overflow: hidden;
+								cursor: pointer;
+
+								&:hover, &:focus {
+									outline-color: @linkColor;
+								}
+
+								> img {
+									height: 100%;
+								}
+							}
+
+							> div > a {
+								padding-left: @paddingNormal;
+								font-size: 1.2em;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		> .newMessage {
+			@newMessagePadding: @paddingBig;
+
+			height: @newMessageHeight;
+			position: absolute;
+			bottom: @paddingBig + @newMessagePadding;
+			left: 0;
+			right: 0;
+			padding: @newMessagePadding;
+			border-top: 1pt solid #CCC;
+
+			.textarea {
+				margin-right: @newMessageHeight;
+
+				textarea {
+					height: @newMessageHeight;
+					width: 100%;
+				}
+			}
+
+			.send {
+				float: right;
+				width: @newMessageHeight;
+				height: @newMessageHeight;
+
+				a.btn {
+					.fill();
+					line-height: @newMessageHeight;
+					text-align: center;
+				}
+			}
+		}
 	}
 
-	ul {
-	  .gridList();
-	  .clickableList();
+	> .users {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 0;
+		padding: @paddingBig @paddingNormal;
+		.transition(width, @transitionSpeedSlow);
+		@media (min-width: @sidebarMinWidth) {
+			width: @sidebarWidth;
+		}
+
+		section {
+			.metroBox(@metroOrange);
+
+			ul {
+				.gridList();
+				.clickableList();
+
+				.avatar {
+					width: 40pt;
+					font-size: 30pt;
+				}
+
+				.username {
+					padding-left: @paddingSmall;
+				}
+			}
+		}
 	}
-  }
 }

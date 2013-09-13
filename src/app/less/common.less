@@ -1,51 +1,49 @@
 div.avatar {
-  width: 1em;
-  font-size: 40pt;
-  line-height: 1em;
-  color: #FFF;
-  height: 0.75em;
+	font-size: 40pt;
+	height: 1em;
 
-  &.online {
-	border-left: 0.1em solid @metroGreen;
-  }
+	&.online {
+		border-left: 0.1em solid @metroGreen;
+	}
 
-  &.abscent {
-	border-left: 0.1em solid @metroOrange;
-  }
+	&.abscent {
+		border-left: 0.1em solid @metroOrange;
+	}
 
-  &.idle {
-	border-left: 0.1em solid @metroRed;
-  }
+	&.idle {
+		border-left: 0.1em solid @metroRed;
+	}
 
-  &.offline {
-	border-left: 0.1em solid @greyLightest;
-  }
+	&.offline {
+		border-left: 0.1em solid @greyLightest;
+	}
 
-  i.icon-user {
-	font-size: 0.75em;
-	position: relative;
-	background: @greyLight;
-	top: -0.2em;
-  }
+	i.icon-user {
+		display: inline-block;
+		text-align: center;
+		line-height: 1em;
+		color: @metroDarkBlue;
+		.fill();
+	}
 }
 
 ul.users {
-  .gridList();
-  .clickableList();
+	.gridList();
+	.clickableList();
 
-  > li {
-	line-height: 3em;
+	> li {
+		line-height: 3em;
 
-	> div {
-	  .singleLine();
+		> div {
+			.singleLine();
 
-	  &.avatarContainer {
-		width: 40pt;
+			&.avatarContainer {
+				width: 40pt;
 
-		> .avatar {
-		  font-size: 40pt;
+				> .avatar {
+					font-size: 40pt;
+				}
+			}
 		}
-	  }
 	}
-  }
 }
