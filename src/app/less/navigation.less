@@ -1,0 +1,83 @@
+@import "variables";
+@import "mixins";
+
+#navigation {
+	.noListStyle;
+	position: fixed;
+	top: @pageHeaderHeight;
+	left: 0;
+	bottom: @contextBarHeight;
+	width: @navigationWidth;
+	border-right: 1pt solid @greyLight;
+
+	> li {
+		width: 100%;
+		margin: @paddingNormal 0;
+		.transition(background, @transitionSpeedFast);
+
+		&.home {
+			&:hover, &:focus, &.active {
+				background: @metroRed;
+			}
+		}
+
+		&.settings {
+			&:hover, &:focus, &.active {
+				background: @metroGreen;
+			}
+		}
+
+		&.contacts {
+			&:hover, &:focus, &.active {
+				background: @metroOrange;
+			}
+		}
+
+		&.rooms {
+			&:hover, &:focus, &.active {
+				background: @metroBlue;
+			}
+		}
+
+		&:hover, &:focus, &.active {
+			> a {
+				color: #FFF;
+			}
+		}
+
+		> a {
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			font-size: @navigationWidth * 0.6;
+			line-height: @navigationWidth;
+			color: @fontColor;
+		}
+	}
+}
+
+#roomNavigation {
+	.noListStyle;
+	position: fixed;
+	top: @pageHeaderHeight;
+	left: @navigationWidth;
+	width: 100%;
+	height: @roomNavigationHeight;
+	border-bottom: 1pt solid @greyLight;
+
+	> li {
+		display: block;
+		float: left;
+		line-height: @roomNavigationHeight;
+
+		> a {
+			padding: 0 @paddingNormal;
+			display: inline-block;
+
+			&:hover, &:focus, &.active {
+				background: @metroBlue;
+				color: #FFF;
+			}
+		}
+	}
+}

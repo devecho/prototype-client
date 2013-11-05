@@ -1,0 +1,60 @@
+@import "variables";
+@import "mixins";
+
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: @pageHeaderHeight;
+	font-size: @pageHeaderHeight;
+	background: @areaColor;
+
+	> img {
+		float: left;
+		height: @pageHeaderHeight - (@paddingNormal *2);
+		margin: @paddingNormal;
+	}
+
+	#globalSearch {
+		display: block;
+		width: 50%;
+		height: @pageHeaderHeight - (2 * @paddingSmall);
+		padding: 0 @paddingSmall;
+		margin-top: @paddingSmall;
+		margin-left: @navigationWidth + @paddingBig;
+		border-bottom-color: #FFF;
+		font-size: 12pt;
+		color: #FFF;
+	}
+
+	> .currentUser {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin-right: @paddingBig;
+		font-size: @pageHeaderHeight;
+		padding: 0 @paddingSmall;
+		color: #FFF;
+
+		&:hover, &:focus, &.active {
+			background: @metroOrange;
+		}
+
+		i.icon-user {
+			padding: 0;
+			float: left;
+			font-size: 0.7em;
+			line-height: @pageHeaderHeight;
+		}
+
+		.username {
+			float: right;
+			margin-left: @paddingNormal;
+			width: auto;
+			font-size: 0.3em;
+			line-height: @pageHeaderHeight;
+		}
+	}
+}

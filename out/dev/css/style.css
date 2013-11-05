@@ -488,6 +488,138 @@ input:-moz-placeholder {
   font-style: italic;
   opacity: 0.5;
 }
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40pt;
+  font-size: 40pt;
+  background: #333333;
+}
+#header > img {
+  float: left;
+  height: 20pt;
+  margin: 10pt;
+}
+#header #globalSearch {
+  display: block;
+  width: 50%;
+  height: 30pt;
+  padding: 0 5pt;
+  margin-top: 5pt;
+  margin-left: 60pt;
+  border-bottom-color: #FFF;
+  font-size: 12pt;
+  color: #FFF;
+}
+#header > .currentUser {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 20pt;
+  font-size: 40pt;
+  padding: 0 5pt;
+  color: #FFF;
+}
+#header > .currentUser:hover,
+#header > .currentUser:focus,
+#header > .currentUser.active {
+  background: #ff9900;
+}
+#header > .currentUser i.icon-user {
+  padding: 0;
+  float: left;
+  font-size: 0.7em;
+  line-height: 40pt;
+}
+#header > .currentUser .username {
+  float: right;
+  margin-left: 10pt;
+  width: auto;
+  font-size: 0.3em;
+  line-height: 40pt;
+}
+#navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 40pt;
+  left: 0;
+  bottom: 40pt;
+  width: 40pt;
+  border-right: 1pt solid #cccccc;
+}
+#navigation > li {
+  width: 100%;
+  margin: 10pt 0;
+  -webkit-transition: background ease-in-out 100ms;
+  -moz-transition: background ease-in-out 100ms;
+  -ms-transition: background ease-in-out 100ms;
+  -o-transition: background ease-in-out 100ms;
+  transition: background ease-in-out 100ms;
+}
+#navigation > li.home:hover,
+#navigation > li.home:focus,
+#navigation > li.home.active {
+  background: #cc0000;
+}
+#navigation > li.settings:hover,
+#navigation > li.settings:focus,
+#navigation > li.settings.active {
+  background: #00cc00;
+}
+#navigation > li.contacts:hover,
+#navigation > li.contacts:focus,
+#navigation > li.contacts.active {
+  background: #ff9900;
+}
+#navigation > li.rooms:hover,
+#navigation > li.rooms:focus,
+#navigation > li.rooms.active {
+  background: #0099ff;
+}
+#navigation > li:hover > a,
+#navigation > li:focus > a,
+#navigation > li.active > a {
+  color: #FFF;
+}
+#navigation > li > a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 24pt;
+  line-height: 40pt;
+  color: #000000;
+}
+#roomNavigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 40pt;
+  left: 40pt;
+  width: 100%;
+  height: 30pt;
+  border-bottom: 1pt solid #cccccc;
+}
+#roomNavigation > li {
+  display: block;
+  float: left;
+  line-height: 30pt;
+}
+#roomNavigation > li > a {
+  padding: 0 10pt;
+  display: inline-block;
+}
+#roomNavigation > li > a:hover,
+#roomNavigation > li > a:focus,
+#roomNavigation > li > a.active {
+  background: #0099ff;
+  color: #FFF;
+}
 #contextBar {
   position: fixed;
   bottom: 0;
@@ -810,131 +942,4 @@ div.room > .users section ul .username {
 }
 @media (min-width: 768px) {
   
-}
-#header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 40pt;
-  font-size: 40pt;
-  background: #333333;
-}
-#header #globalSearch {
-  display: block;
-  width: 50%;
-  height: 30pt;
-  padding: 0 5pt;
-  margin-top: 5pt;
-  margin-left: 60pt;
-  border-bottom-color: #FFF;
-  font-size: 12pt;
-  color: #FFF;
-}
-#header > .currentUser {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 20pt;
-  font-size: 40pt;
-  padding: 0 5pt;
-  color: #FFF;
-}
-#header > .currentUser:hover,
-#header > .currentUser:focus,
-#header > .currentUser.active {
-  background: #ff9900;
-}
-#header > .currentUser i.icon-user {
-  padding: 0;
-  float: left;
-  font-size: 0.7em;
-  line-height: 40pt;
-}
-#header > .currentUser .username {
-  float: right;
-  margin-left: 10pt;
-  width: auto;
-  font-size: 0.3em;
-  line-height: 40pt;
-}
-#navigation {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  top: 40pt;
-  left: 0;
-  bottom: 40pt;
-  width: 40pt;
-  border-right: 1pt solid #cccccc;
-}
-#navigation > li {
-  width: 100%;
-  margin: 10pt 0;
-  -webkit-transition: background ease-in-out 100ms;
-  -moz-transition: background ease-in-out 100ms;
-  -ms-transition: background ease-in-out 100ms;
-  -o-transition: background ease-in-out 100ms;
-  transition: background ease-in-out 100ms;
-}
-#navigation > li.home:hover,
-#navigation > li.home:focus,
-#navigation > li.home.active {
-  background: #cc0000;
-}
-#navigation > li.settings:hover,
-#navigation > li.settings:focus,
-#navigation > li.settings.active {
-  background: #00cc00;
-}
-#navigation > li.contacts:hover,
-#navigation > li.contacts:focus,
-#navigation > li.contacts.active {
-  background: #ff9900;
-}
-#navigation > li.rooms:hover,
-#navigation > li.rooms:focus,
-#navigation > li.rooms.active {
-  background: #0099ff;
-}
-#navigation > li:hover > a,
-#navigation > li:focus > a,
-#navigation > li.active > a {
-  color: #FFF;
-}
-#navigation > li > a {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  font-size: 24pt;
-  line-height: 40pt;
-  color: #000000;
-}
-#roomNavigation {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  top: 40pt;
-  left: 40pt;
-  width: 100%;
-  height: 30pt;
-  border-bottom: 1pt solid #cccccc;
-}
-#roomNavigation > li {
-  display: block;
-  float: left;
-  line-height: 30pt;
-}
-#roomNavigation > li > a {
-  padding: 0 10pt;
-  display: inline-block;
-}
-#roomNavigation > li > a:hover,
-#roomNavigation > li > a:focus,
-#roomNavigation > li > a.active {
-  background: #0099ff;
-  color: #FFF;
 }
