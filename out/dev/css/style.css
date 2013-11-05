@@ -132,10 +132,11 @@ ul.clickable > li {
 }
 ul.clickable > li:hover {
   background: #eeeeee;
-  -webkit-transition: background ease-in-out 100ms;
-  -moz-transition: background ease-in-out 100ms;
-  -ms-transition: background ease-in-out 100ms;
-  -o-transition: background ease-in-out 100ms;
+  -webkit-transition: background ease-in-out 250ms;
+  -moz-transition: background ease-in-out 250ms;
+  -ms-transition: background ease-in-out 250ms;
+  -o-transition: background ease-in-out 250ms;
+  transition: background ease-in-out 250ms;
 }
 ul.grid {
   list-style: none;
@@ -432,10 +433,11 @@ ul.users > li {
 }
 ul.users > li:hover {
   background: #eeeeee;
-  -webkit-transition: background ease-in-out 100ms;
-  -moz-transition: background ease-in-out 100ms;
-  -ms-transition: background ease-in-out 100ms;
-  -o-transition: background ease-in-out 100ms;
+  -webkit-transition: background ease-in-out 250ms;
+  -moz-transition: background ease-in-out 250ms;
+  -ms-transition: background ease-in-out 250ms;
+  -o-transition: background ease-in-out 250ms;
+  transition: background ease-in-out 250ms;
 }
 ul.users > li {
   line-height: 3em;
@@ -457,107 +459,41 @@ textarea {
   border: 1pt solid #999999;
   outline: none;
 }
-#navigation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 40pt;
-  font-size: 40pt;
-  background: #003344;
-  -webkit-transition: left ease-in-out 500ms;
-  -moz-transition: left ease-in-out 500ms;
-  -ms-transition: left ease-in-out 500ms;
-  -o-transition: left ease-in-out 500ms;
+input {
+  border: none;
+  border-bottom: 1pt solid #000000;
+  outline: none;
+  background: none;
 }
-#navigation h1,
-#navigation h2,
-#navigation h3,
-#navigation h4,
-#navigation h5 {
-  color: #FFF;
+input:focus {
+  border-bottom-color: #0099ff;
 }
-#navigation ul {
-  margin-left: 200pt;
-  font-size: 1.2em;
+::-webkit-input-placeholder {
+  color: inherit;
+  font-style: italic;
+  opacity: 0.5;
 }
-#navigation ul li {
-  height: 40pt;
-  padding: 0 5pt;
-  margin: 0 5pt;
-  -webkit-transition: background ease-in-out 100ms;
-  -moz-transition: background ease-in-out 100ms;
-  -ms-transition: background ease-in-out 100ms;
-  -o-transition: background ease-in-out 100ms;
+::-moz-placeholder {
+  color: inherit;
+  font-style: italic;
+  opacity: 0.5;
 }
-#navigation ul li.home:hover,
-#navigation ul li.home:focus,
-#navigation ul li.home.active {
-  background: #cc0000;
+:-ms-input-placeholder {
+  color: inherit;
+  font-style: italic;
+  opacity: 0.5;
 }
-#navigation ul li.settings:hover,
-#navigation ul li.settings:focus,
-#navigation ul li.settings.active {
-  background: #00cc00;
-}
-#navigation ul li.contacts:hover,
-#navigation ul li.contacts:focus,
-#navigation ul li.contacts.active {
-  background: #ff9900;
-}
-#navigation ul li.rooms:hover,
-#navigation ul li.rooms:focus,
-#navigation ul li.rooms.active {
-  background: #0099ff;
-}
-#navigation ul li.currentUser {
-  float: right;
-  margin-right: 20pt;
-}
-#navigation ul li.currentUser:hover,
-#navigation ul li.currentUser:focus,
-#navigation ul li.currentUser.active {
-  background: #ff9900;
-}
-#navigation ul li.currentUser a {
-  width: auto;
-}
-#navigation ul li.currentUser i.icon-user {
-  padding: 0;
-  color: #FFF;
-  float: left;
-  font-size: 28pt;
-  line-height: 40pt;
-}
-#navigation ul li.currentUser .username {
-  float: right;
-  margin-left: 10pt;
-  width: auto;
-  font-size: 0.3em;
-  line-height: 40pt;
-  color: #FFF;
-}
-#navigation ul li a {
-  vertical-align: top;
-  display: inline-block;
-  height: 100%;
-  width: 40pt;
-  font-size: 40pt;
-  line-height: 30pt;
-  text-align: center;
-}
-#navigation ul li a i {
-  vertical-align: top;
-  padding: 10pt 0;
-  font-size: 20pt;
-  color: #FFF;
+input:-moz-placeholder {
+  color: inherit;
+  font-style: italic;
+  opacity: 0.5;
 }
 #contextBar {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 50pt;
-  background: #003344;
+  height: 40pt;
+  background: #333333;
 }
 #contextBar ul {
   list-style: none;
@@ -566,14 +502,14 @@ textarea {
 }
 #contextBar ul li {
   float: left;
-  height: 50pt;
+  height: 40pt;
   margin: 0 5pt;
 }
 #contextBar ul li a {
   padding: 0 10pt;
   color: #FFF;
   display: inline-block;
-  line-height: 50pt;
+  line-height: 40pt;
   width: 100%;
   height: 100%;
 }
@@ -598,10 +534,11 @@ ul.dashboard > li {
   padding: 10pt;
   font-size: 0.8em;
   width: 33%;
-  -webkit-transition: width ease-in-out 100ms;
-  -moz-transition: width ease-in-out 100ms;
-  -ms-transition: width ease-in-out 100ms;
-  -o-transition: width ease-in-out 100ms;
+  -webkit-transition: width ease-in-out 250ms;
+  -moz-transition: width ease-in-out 250ms;
+  -ms-transition: width ease-in-out 250ms;
+  -o-transition: width ease-in-out 250ms;
+  transition: width ease-in-out 250ms;
 }
 @media (max-width: 1279px) {
   ul.dashboard > li {
@@ -671,49 +608,6 @@ ul.dashboard > li > section.invitations ul li > i.icon-close {
   font-size: 8pt;
   padding: 10pt;
 }
-#roomNavigation {
-  position: fixed;
-  top: 40pt;
-  bottom: 50pt;
-  left: 0;
-  width: 0;
-  overflow: hidden;
-  background: #FFF;
-  border-right: 1pt solid #cccccc;
-  -webkit-transition: width ease-in-out 500ms;
-  -moz-transition: width ease-in-out 500ms;
-  -ms-transition: width ease-in-out 500ms;
-  -o-transition: width ease-in-out 500ms;
-}
-@media (min-width: 768px) {
-  #roomNavigation {
-    width: 200pt;
-  }
-}
-#roomNavigation > ul {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-#roomNavigation > ul > li > a {
-  width: 100%;
-  display: inline-block;
-  vertical-align: bottom;
-  padding: 0 10pt;
-  line-height: 30pt;
-  color: #000000;
-  -webkit-transition: background ease-in-out 100ms, color ease-in-out 100ms;
-  -moz-transition: background ease-in-out 100ms, color ease-in-out 100ms;
-  -ms-transition: background ease-in-out 100ms, color ease-in-out 100ms;
-  -o-transition: background ease-in-out 100ms, color ease-in-out 100ms;
-  transition: background ease-in-out 100ms, color ease-in-out 100ms;
-}
-#roomNavigation > ul > li > a:hover,
-#roomNavigation > ul > li > a:focus,
-#roomNavigation > ul > li > a.active {
-  background: #0099ff;
-  color: #FFF;
-}
 div.room {
   position: relative;
   height: 100%;
@@ -722,13 +616,14 @@ div.room {
 div.room > .chat {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   -webkit-transition: right ease-in-out 500ms;
   -moz-transition: right ease-in-out 500ms;
   -ms-transition: right ease-in-out 500ms;
   -o-transition: right ease-in-out 500ms;
+  transition: right ease-in-out 500ms;
 }
 @media (min-width: 1280px) {
   div.room > .chat {
@@ -736,79 +631,88 @@ div.room > .chat {
   }
 }
 div.room > .chat > .messages {
-  display: block;
-  overflow-y: scroll;
-  overflow-x: hidden;
   position: absolute;
   top: 20pt;
   bottom: 100pt;
   left: 20pt;
   right: 0;
-  list-style: none;
-  font-size: 10pt;
 }
-div.room > .chat > .messages > ul {
+div.room > .chat > .messages > .viewport > .content > ul {
+  list-style: none;
+  padding: 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
   margin: 0;
   padding: 0 20pt 0 0;
+  font-size: 10pt;
 }
-div.room > .chat > .messages > ul > li > * {
+div.room > .chat > .messages > .viewport > .content > ul li {
+  display: table-row;
+}
+div.room > .chat > .messages > .viewport > .content > ul li > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+div.room > .chat > .messages > .viewport > .content > ul > li > * {
   vertical-align: top;
   padding: 10pt 0;
   border-bottom: 1pt solid #cccccc;
 }
-div.room > .chat > .messages > ul > li > .username {
+div.room > .chat > .messages > .viewport > .content > ul > li > .username {
   width: 125pt;
   padding-left: 10pt;
   padding-right: 10pt;
   text-align: right;
   font-weight: bold;
 }
-div.room > .chat > .messages > ul > li > .username > a {
+div.room > .chat > .messages > .viewport > .content > ul > li > .username > a {
   display: inline-block;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-div.room > .chat > .messages > ul > li > .username.own > a {
+div.room > .chat > .messages > .viewport > .content > ul > li > .username.own > a {
   color: #999999;
 }
-div.room > .chat > .messages > ul > li > .content > .files {
+div.room > .chat > .messages > .viewport > .content > ul > li > .content > .files {
   display: table-row;
 }
-div.room > .chat > .messages > ul > li > .content > .files > * {
+div.room > .chat > .messages > .viewport > .content > ul > li > .content > .files > * {
   display: table-cell;
   vertical-align: middle;
 }
-div.room > .chat > .messages > ul > li > .content > .files > .image {
+div.room > .chat > .messages > .viewport > .content > ul > li > .content > .files > .image {
   border: 2pt solid #FFF;
   outline: 1pt solid #cccccc;
-  -webkit-transition: outline ease-in-out 100ms;
-  -moz-transition: outline ease-in-out 100ms;
-  -ms-transition: outline ease-in-out 100ms;
-  -o-transition: outline ease-in-out 100ms;
+  -webkit-transition: outline ease-in-out 250ms;
+  -moz-transition: outline ease-in-out 250ms;
+  -ms-transition: outline ease-in-out 250ms;
+  -o-transition: outline ease-in-out 250ms;
+  transition: outline ease-in-out 250ms;
   width: 80pt;
   height: 60pt;
   overflow: hidden;
   cursor: pointer;
 }
-div.room > .chat > .messages > ul > li > .content > .files > .image:hover,
-div.room > .chat > .messages > ul > li > .content > .files > .image:focus {
+div.room > .chat > .messages > .viewport > .content > ul > li > .content > .files > .image:hover,
+div.room > .chat > .messages > .viewport > .content > ul > li > .content > .files > .image:focus {
   outline-color: #0099ff;
 }
-div.room > .chat > .messages > ul > li > .content > .files > .image > img {
+div.room > .chat > .messages > .viewport > .content > ul > li > .content > .files > .image > img {
   height: 100%;
 }
-div.room > .chat > .messages > ul > li > .content > .files > div > a {
+div.room > .chat > .messages > .viewport > .content > ul > li > .content > .files > div > a {
   padding-left: 10pt;
   font-size: 1.2em;
 }
 div.room > .chat > .newMessage {
-  height: 60pt;
   position: absolute;
   bottom: 40pt;
   left: 0;
   right: 0;
+  height: 60pt;
   padding: 20pt;
   border-top: 1pt solid #CCC;
 }
@@ -836,15 +740,16 @@ div.room > .users {
   bottom: 0;
   right: 0;
   width: 0;
-  padding: 20pt 10pt;
-  -webkit-transition: width ease-in-out 500ms;
-  -moz-transition: width ease-in-out 500ms;
-  -ms-transition: width ease-in-out 500ms;
-  -o-transition: width ease-in-out 500ms;
+  -webkit-transition: width ease-in-out 500ms, padding ease-in-out 500ms;
+  -moz-transition: width ease-in-out 500ms, padding ease-in-out 500ms;
+  -ms-transition: width ease-in-out 500ms, padding ease-in-out 500ms;
+  -o-transition: width ease-in-out 500ms, padding ease-in-out 500ms;
+  transition: width ease-in-out 500ms, padding ease-in-out 500ms;
 }
 @media (min-width: 1280px) {
   div.room > .users {
     width: 250pt;
+    padding: 20pt 10pt;
   }
 }
 div.room > .users section {
@@ -878,10 +783,11 @@ div.room > .users section ul > li {
 }
 div.room > .users section ul > li:hover {
   background: #eeeeee;
-  -webkit-transition: background ease-in-out 100ms;
-  -moz-transition: background ease-in-out 100ms;
-  -ms-transition: background ease-in-out 100ms;
-  -o-transition: background ease-in-out 100ms;
+  -webkit-transition: background ease-in-out 250ms;
+  -moz-transition: background ease-in-out 250ms;
+  -ms-transition: background ease-in-out 250ms;
+  -o-transition: background ease-in-out 250ms;
+  transition: background ease-in-out 250ms;
 }
 div.room > .users section ul .avatar {
   width: 40pt;
@@ -892,17 +798,143 @@ div.room > .users section ul .username {
 }
 #main {
   position: fixed;
-  top: 40pt;
-  bottom: 50pt;
-  left: 0;
+  top: 70pt;
+  bottom: 40pt;
+  left: 40pt;
   right: 0;
   -webkit-transition: left ease-in-out 500ms;
   -moz-transition: left ease-in-out 500ms;
   -ms-transition: left ease-in-out 500ms;
   -o-transition: left ease-in-out 500ms;
+  transition: left ease-in-out 500ms;
 }
 @media (min-width: 768px) {
-  #main {
-    left: 200pt;
-  }
+  
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40pt;
+  font-size: 40pt;
+  background: #333333;
+}
+#header #globalSearch {
+  display: block;
+  width: 50%;
+  height: 30pt;
+  padding: 0 5pt;
+  margin-top: 5pt;
+  margin-left: 60pt;
+  border-bottom-color: #FFF;
+  font-size: 12pt;
+  color: #FFF;
+}
+#header > .currentUser {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 20pt;
+  font-size: 40pt;
+  padding: 0 5pt;
+  color: #FFF;
+}
+#header > .currentUser:hover,
+#header > .currentUser:focus,
+#header > .currentUser.active {
+  background: #ff9900;
+}
+#header > .currentUser i.icon-user {
+  padding: 0;
+  float: left;
+  font-size: 0.7em;
+  line-height: 40pt;
+}
+#header > .currentUser .username {
+  float: right;
+  margin-left: 10pt;
+  width: auto;
+  font-size: 0.3em;
+  line-height: 40pt;
+}
+#navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 40pt;
+  left: 0;
+  bottom: 40pt;
+  width: 40pt;
+  border-right: 1pt solid #cccccc;
+}
+#navigation > li {
+  width: 100%;
+  margin: 10pt 0;
+  -webkit-transition: background ease-in-out 100ms;
+  -moz-transition: background ease-in-out 100ms;
+  -ms-transition: background ease-in-out 100ms;
+  -o-transition: background ease-in-out 100ms;
+  transition: background ease-in-out 100ms;
+}
+#navigation > li.home:hover,
+#navigation > li.home:focus,
+#navigation > li.home.active {
+  background: #cc0000;
+}
+#navigation > li.settings:hover,
+#navigation > li.settings:focus,
+#navigation > li.settings.active {
+  background: #00cc00;
+}
+#navigation > li.contacts:hover,
+#navigation > li.contacts:focus,
+#navigation > li.contacts.active {
+  background: #ff9900;
+}
+#navigation > li.rooms:hover,
+#navigation > li.rooms:focus,
+#navigation > li.rooms.active {
+  background: #0099ff;
+}
+#navigation > li:hover > a,
+#navigation > li:focus > a,
+#navigation > li.active > a {
+  color: #FFF;
+}
+#navigation > li > a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 24pt;
+  line-height: 40pt;
+  color: #000000;
+}
+#roomNavigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 40pt;
+  left: 40pt;
+  width: 100%;
+  height: 30pt;
+  border-bottom: 1pt solid #cccccc;
+}
+#roomNavigation > li {
+  display: block;
+  float: left;
+  line-height: 30pt;
+}
+#roomNavigation > li > a {
+  padding: 0 10pt;
+  display: inline-block;
+}
+#roomNavigation > li > a:hover,
+#roomNavigation > li > a:focus,
+#roomNavigation > li > a.active {
+  background: #0099ff;
+  color: #FFF;
 }

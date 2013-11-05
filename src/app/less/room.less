@@ -1,45 +1,6 @@
 @import "variables";
 @import "mixins";
 
-#roomNavigation {
-	position: fixed;
-	top: @pageHeaderHeight;
-	bottom: @contextBarHeight;
-	left: 0;
-	width: 0;
-	overflow: hidden;
-	background: #FFF;
-	border-right: 1pt solid @greyLight;
-	.transition(width, @transitionSpeedSlow);
-
-	@media (min-width: @mediaSmallWidth) {
-		width: @roomNavigationWidth;
-	}
-
-	> ul {
-		display: block;
-		.fill();
-
-		> li {
-
-			> a {
-				width: 100%;
-				display: inline-block;
-				vertical-align: bottom;
-				padding: 0 @paddingNormal;
-				line-height: 30pt;
-				color: @fontColor;
-				.transitionAll(~'background ease-in-out @{transitionSpeed}, color ease-in-out @{transitionSpeed}');
-
-				&:hover, &:focus, &.active {
-					background: @metroBlue;
-					color: #FFF;
-				}
-			}
-		}
-	}
-}
-
 div.room {
 	position: relative;
 	@sidebarMinWidth: 1280px;
@@ -51,9 +12,9 @@ div.room {
 	> .chat {
 		position: absolute;
 		top: 0;
-		bottom: 0;
 		left: 0;
 		right: 0;
+		bottom: 0;
 
 		.transition(right, @transitionSpeedSlow);
 		@media (min-width: @sidebarMinWidth) {
@@ -61,20 +22,17 @@ div.room {
 		}
 
 		> .messages {
-			display: block;
-			overflow-y: scroll;
-			overflow-x: hidden;
 			position: absolute;
 			top: @paddingBig;
 			bottom: @newMessageHeight + @paddingBig + @paddingBig;
 			left: @paddingBig;
 			right: 0;
-			list-style: none;
-			font-size: @fontSizeText;
 
-			> ul {
+			> .viewport > .content > ul {
+				.gridList();
 				margin: 0;
 				padding: 0 @paddingBig 0 0;
+				font-size: @fontSizeText;
 
 				> li {
 
@@ -141,12 +99,11 @@ div.room {
 
 		> .newMessage {
 			@newMessagePadding: @paddingBig;
-
-			height: @newMessageHeight;
 			position: absolute;
 			bottom: @paddingBig + @newMessagePadding;
 			left: 0;
 			right: 0;
+			height: @newMessageHeight;
 			padding: @newMessagePadding;
 			border-top: 1pt solid #CCC;
 
@@ -179,10 +136,10 @@ div.room {
 		bottom: 0;
 		right: 0;
 		width: 0;
-		padding: @paddingBig @paddingNormal;
-		.transition(width, @transitionSpeedSlow);
+		.transition2(width, padding, @transitionSpeedSlow);
 		@media (min-width: @sidebarMinWidth) {
 			width: @sidebarWidth;
+			padding: @paddingBig @paddingNormal;
 		}
 
 		section {

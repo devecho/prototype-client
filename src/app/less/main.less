@@ -5,22 +5,152 @@
 @import "icons";
 @import "common";
 @import "forms";
-@import "navigation";
 @import "contextbar";
 @import "dashboard";
 @import "room";
 
 #main {
 	position: fixed;
-	top: @pageHeaderHeight;
+	top: @pageHeaderHeight + @roomNavigationHeight;
 	bottom: @contextBarHeight;
-	left: 0;
+	left: @navigationWidth;
 	right: 0;
 	.transition(left, @transitionSpeedSlow);
 }
 
 @media (min-width: @mediaSmallWidth) {
-	#main {
-		left: @roomNavigationWidth;
+
+}
+
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: @pageHeaderHeight;
+	font-size: @pageHeaderHeight;
+	background: @areaColor;
+
+	#globalSearch {
+		display: block;
+		width: 50%;
+		height: @pageHeaderHeight - (2 * @paddingSmall);
+		padding: 0 @paddingSmall;
+		margin-top: @paddingSmall;
+		margin-left: @navigationWidth + @paddingBig;
+		border-bottom-color: #FFF;
+		font-size: 12pt;
+		color: #FFF;
+	}
+
+	> .currentUser {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin-right: @paddingBig;
+		font-size: @pageHeaderHeight;
+		padding: 0 @paddingSmall;
+		color: #FFF;
+
+		&:hover, &:focus, &.active {
+			background: @metroOrange;
+		}
+
+		i.icon-user {
+			padding: 0;
+			float: left;
+			font-size: 0.7em;
+			line-height: @pageHeaderHeight;
+		}
+
+		.username {
+			float: right;
+			margin-left: @paddingNormal;
+			width: auto;
+			font-size: 0.3em;
+			line-height: @pageHeaderHeight;
+		}
+	}
+}
+
+#navigation {
+	.noListStyle;
+	position: fixed;
+	top: @pageHeaderHeight;
+	left: 0;
+	bottom: @contextBarHeight;
+	width: @navigationWidth;
+	border-right: 1pt solid @greyLight;
+
+	> li {
+		width: 100%;
+		margin: @paddingNormal 0;
+		.transition(background, @transitionSpeedFast);
+
+		&.home {
+			&:hover, &:focus, &.active {
+				background: @metroRed;
+			}
+		}
+
+		&.settings {
+			&:hover, &:focus, &.active {
+				background: @metroGreen;
+			}
+		}
+
+		&.contacts {
+			&:hover, &:focus, &.active {
+				background: @metroOrange;
+			}
+		}
+
+		&.rooms {
+			&:hover, &:focus, &.active {
+				background: @metroBlue;
+			}
+		}
+
+		&:hover, &:focus, &.active {
+			> a {
+				color: #FFF;
+			}
+		}
+
+		> a {
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			font-size: @navigationWidth * 0.6;
+			line-height: @navigationWidth;
+			color: @fontColor;
+		}
+	}
+}
+
+#roomNavigation {
+	.noListStyle;
+	position: fixed;
+	top: @pageHeaderHeight;
+	left: @navigationWidth;
+	width: 100%;
+	height: @roomNavigationHeight;
+	border-bottom: 1pt solid @greyLight;
+
+	> li {
+		display: block;
+		float: left;
+		line-height: @roomNavigationHeight;
+
+		> a {
+			padding: 0 @paddingNormal;
+			display: inline-block;
+
+			&:hover, &:focus, &.active {
+				background: @metroBlue;
+				color: #FFF;
+			}
+		}
 	}
 }

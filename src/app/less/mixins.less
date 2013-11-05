@@ -6,10 +6,11 @@
 }
 
 .transition(@prop, @speed: @transitionSpeed) {
-	-webkit-transition: @prop ease-in-out @speed;
-	-moz-transition: @prop ease-in-out @speed;
-	-ms-transition: @prop ease-in-out @speed;
-	-o-transition: @prop ease-in-out @speed;
+	.transitionAll(~'@{prop} ease-in-out @{speed}');
+}
+
+.transition2(@prop1, @prop2, @speed: @transitionSpeed) {
+	.transitionAll(~'@{prop1} ease-in-out @{speed}, @{prop2} ease-in-out @{speed}');
 }
 
 .transitionAll (@value) {

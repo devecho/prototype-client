@@ -1,30 +1,31 @@
 requirejs.config({
 	baseUrl: '',
-	
+
 	shim: {
-		'lib/handlebars': {
+		'lib/handlebars':  {
 			exports: 'Handlebars'
 		},
-		'lib/backbone': {
+		'lib/backbone':    {
 			exports: 'Backbone',
-			deps: ['lib/jquery', 'lib/underscore']
+			deps:    ['lib/jquery', 'lib/underscore']
 		},
-		'lib/jquery': {
+		'lib/jquery':      {
 			exports: 'jQuery',
-			deps: []
+			deps:    []
 		},
-		'lib/underscore': {
+		'lib/underscore':  {
 			exports: '_',
-			deps: []
+			deps:    []
 		},
-		'lib/bootstrap': {
-			deps: ['lib/jquery']
+		'lib/fancyscroll': {
+			exports: 'jQuery.fn.jsFancyScroll',
+			deps:    ['lib/jquery']
 		}
 	},
-	
+
 	paths: {
 		'backbone': 'plugins/backbone-extension',
-		'txt': 'plugins/requirejs.text'
+		'txt':      'plugins/requirejs.text'
 	}
 });
 
@@ -43,7 +44,8 @@ define('app', [], function() {
 	};
 });
 
-requirejs(['backbone', 'routers/Main', 'lib/bootstrap'], function(Backbone, MainRouter) {
+requirejs(['backbone', 'routers/Main', 'lib/fancyscroll'], function(Backbone,
+                                                                    MainRouter) {
 	var mainRouter = new MainRouter();
 	Backbone.history.start();
 });

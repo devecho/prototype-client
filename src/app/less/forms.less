@@ -1,6 +1,43 @@
+@import "variables";
+
 textarea {
-  margin: 0;
-  padding: @paddingSmall;
-  border: 1pt solid @grey;
-  outline: none;
+	margin: 0;
+	padding: @paddingSmall;
+	border: 1pt solid @grey;
+	outline: none;
+}
+
+input {
+	border: none;
+	border-bottom: 1pt solid @fontColor;
+	outline: none;
+	background: none;
+
+	&:focus {
+		border-bottom-color: @metroBlue;
+	}
+}
+
+::-webkit-input-placeholder {
+	color: inherit;
+	font-style: italic;
+	opacity: 0.5;
+}
+
+::-moz-placeholder {
+	color: inherit;
+	font-style: italic;
+	opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+	color: inherit;
+	font-style: italic;
+	opacity: 0.5;
+}
+
+input:-moz-placeholder {
+	color: inherit;
+	font-style: italic;
+	opacity: 0.5;
 }
